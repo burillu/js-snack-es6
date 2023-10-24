@@ -71,3 +71,19 @@ const students = [
         grades:84
     },
 ]
+
+const nameUpperCase = [];
+students.forEach((student)=>{
+    nameUpperCase.push(student.name.toUpperCase())
+})
+console.log(nameUpperCase);
+
+
+const grades70= students.filter((stud)=> stud.grades > 70);
+
+const studentGrades70id120= students.filter((stud)=> (stud.grades > 70 && stud.id > 120));
+
+
+console.log(students);
+console.log(grades70);
+console.log(studentGrades70id120);
