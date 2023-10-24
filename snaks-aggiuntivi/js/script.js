@@ -6,54 +6,46 @@ stringhe del primo array in minuscolo e con l’iniziale maiuscola.
 Es: [‘pippo’, ‘PLUTO’, ‘Paperino’] => [‘Pippo’, ‘Pluto’, ‘Paperino’]
 */
 
+console.log('***************************************************\n JSNACK 2')
+
 const general = ['pippo', 'PLUTO', 'Paperino'];
-const generalSplit = general.map((name) => {
-    return name.toLowerCase().split(' ');
-});
-let nameCapital = generalSplit.map((word)=>{
-    console.log(word)
-    let wordStr= word.toString();
-    //console.log(wordStr);
-    let result= '';
-    for (let index = 0; index < wordStr.length; index++) {
-        const element = wordStr[index];
-        //console.log(element)
-        if (index === 0) {
-            result=element.toUpperCase();
-        }else{
-            result+=element;
-        }
-        
-    }console.log(result);
-    return result
-     //word.forEach((char)=>{
-       // result += char[0].toUpperCase();
-        //result += char;
-        //result.push(char[0].toUpperCase());
+
+
+let generalCapital = toCapitalFirst(general);
+
+// funzione per trasformare prima lettera in maiuscola
+function toCapitalFirst(arrayName) {
+
+    const generalSplit = arrayName.map((name) => {
+        return name.toLowerCase().split(' ');
+    });
+    let nameCapital = generalSplit.map((word) => {
+        //console.log(word)
+        let wordStr = word.toString();
+        //console.log(wordStr);
+        let result = '';
+        for (let index = 0; index < wordStr.length; index++) {
+            const element = wordStr[index];
+            //console.log(element)
+            if (index === 0) {
+                result = element.toUpperCase();
+            } else {
+                result += element;
+            }
+
+        }//console.log(result);
+        return result
+
     })
-    
-    //word.replace(char[0], char[0].toUpperCase());
-console.log(nameCapital);
 
 
 
-//let nameCapital = [];
-//generalSplit.forEach((char, i) => {
-//    console.log(char)
-
-
-    //char.replace(0, char[0].toUpperCase())
-    //nameCapital.push(char);
-    // if (i === 0) {
-    //     nameCapital.push(char[i].toUpperCase());
-    //     console.log(char[i].toUpperCase())
-    // } //else{
-    // nameCapital.push(char[i].toLowerCase());
-    // console.log(char[i].toLowerCase())
-//})
+    return nameCapital
+}
 
 
 
+console.log(generalCapital);
 
 
 
@@ -73,6 +65,44 @@ Es:
 Crea un nuovo array con la lista dei mammiferi. */
 
 
+console.log('***************************************************\n JSNACK 3')
+
+const animals = [
+    {
+        nome: 'leone',
+        famiglia: 'felidi',
+        classe: 'mammiferi'
+    },
+    {
+        nome: 'cane',
+        famiglia: 'canidi',
+        classe: 'mammiferi'
+    },
+    {
+        nome: 'gallina',
+        famiglia: 'fasianidi',
+        classe: 'uccelli'
+    },
+    {
+        nome: 'lupo',
+        famiglia: 'canidi',
+        classe: 'mammiferi'
+    },
+    {
+        nome: 'leone',
+        famiglia: 'felid',
+        classe: 'mammiferi'
+    },
+    {
+        nome: 'topo',
+        famiglia: 'roditori',
+        classe: 'mammiferi'
+    },
+]
+
+
+const mammiferi = animals.filter((animal)=> animal.classe==='mammiferi');
+console.log(mammiferi);
 /*
 **********************************************************************************************************************
 
