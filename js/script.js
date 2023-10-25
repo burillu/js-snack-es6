@@ -150,13 +150,14 @@ const ligtherBike = sortBy(bikes);
 function sortBy(array, prop) {
     let bikeSample = bikes[0];
     array.forEach((bike) => {
-        if (bikeSample.weight > bike.weight) {
+        const {weight}= bike
+        if (bikeSample.weight > weight) {
             bikeSample = bike
         }
     })
     return bikeSample
 }
-console.log(ligtherBike);
+console.log(`La bici più leggera è : ${ligtherBike.name}, con un peso di ${ligtherBike.weight} kg.`);
 
 
 
@@ -175,54 +176,54 @@ console.log('*******************************************************************
 
 const teamSerieA = [
     {
-        name:'milan',
-        points:0,
-        faults:0
+        name: 'Milan',
+        points: 0,
+        fouls: 0
     },
     {
-        name:'cagliari',
-        points:0,
-        faults:0
+        name: 'Cagliari',
+        points: 0,
+        fouls: 0
     },
     {
-        name:'torino',
-        points:0,
-        faults:0
+        name: 'Torino',
+        points: 0,
+        fouls: 0
     },
     {
-        name:'como',
-        points:0,
-        faults:0
+        name: 'Como',
+        points: 0,
+        fouls: 0
     },
     {
-        name:'sampdoria',
-        points:0,
-        faults:0
+        name: 'Sampdoria',
+        points: 0,
+        fouls: 0
     },
     {
-        name:'lazio',
-        points:0,
-        faults:0
+        name: 'Lazio',
+        points: 0,
+        fouls: 0
     },
     {
-        name:'roma',
-        points:0,
-        faults:0
+        name: 'Roma',
+        points: 0,
+        fouls: 0
     },
     {
-        name:'atalanta',
-        points:0,
-        faults:0
+        name: 'Atalanta',
+        points: 0,
+        fouls: 0
     },
     {
-        name:'palermo',
-        points:0,
-        faults:0
+        name: 'Palermo',
+        points: 0,
+        fouls: 0
     },
     {
-        name:'napoli',
-        points:0,
-        faults:0
+        name: 'Napoli',
+        points: 0,
+        fouls: 0
     }
 
 ]
@@ -230,18 +231,27 @@ console.log(teamSerieA);
 
 
 
-
+teamSerieA.forEach((team) => {
+    team.points = getRndInteger(0, 83);
+    team.fouls = getRndInteger(0, 20);
+})
+//console.log(teamSerieA)
+const seasonResult = teamSerieA.map((team) => {
+    const { name, fouls } = team;
+    return `Team : ${name} , has received ${fouls} fouls`
+})
+console.log(seasonResult);
 
 
 // // Team constructor
 // class Team {
 //     name;
 //     points;
-//     faults;
-//     constructor(name, points, faults) {
+//     fouls;
+//     constructor(name, points, fouls) {
 //         this.name = name,
 //             this.points = 0,
-//             this.faults = 0
+//             this.fouls = 0
 //     }
 // }
 // const milan = new Team('milan');
