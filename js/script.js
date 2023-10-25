@@ -99,23 +99,60 @@ console.log(studentGrades70id120);
 
 console.log('***********************************************************************************/n Snack 3')
 
-const bikes = [];
-while (bikes.length < 10) {
-    const bike = { name: '', weight: '' };
-    bike.name = 'Atala'+ getRndInteger(1,8).toString();
-    bike.weight = getRndInteger(10, 25);
-    bikes.push(bike);
-}
-const lighterBike= [];
+const bikes = [
+{ name: 'Atala10', weight: 22 },
 
-bikes.forEach((bike, index)=>{
-    const bikesConf = [...bike]
+ 
+{ name: 'Atala8', weight: 25 },
 
+ 
+{ name: 'Atala1', weight: 14 },
+
+ 
+{ name: 'Atala3', weight: 19 },
+
+ 
+{ name: 'Atala11', weight: 18 },
+
+ 
+{ name: 'Atala82', weight: 13 },
+
+ 
+{ name: 'Atala31', weight: 11 },
+
+ 
+{ name: 'Atala4', weight: 21 },
+
+ 
+{ name: 'Atala47', weight: 13 },
+
+ 
+{ name: 'Atala80', weight: 15 }
+];
+// while (bikes.length < 10) {
+//     const bike = { name: '', weight: '' };
+//     bike.name = 'Atala' + getRndInteger(1, 8).toString();
+//     bike.weight = getRndInteger(10, 25);
+//     bikes.push(bike);
+// }
+console.log(bikes)
+const bikeWeight = [];
+
+bikes.forEach((bike) => {
+    //const bikesConf = [...bike]
+    const { weight } = bike;
+    bikeWeight.push(weight);
 })
+bikeWeight.sort((a, b) => a - b);
+const lighterBike = bikes.filter((bike,index)=>{
+    return bike.weight === bikeWeight[0];
+}) 
+console.log (`La bici più leggera è :${lighterBike[0].name}`);
 
 
 
 
 
 
-console.log(bikes);
+//console.log(bikeWeight.sort((a, b) => a - b));
+
