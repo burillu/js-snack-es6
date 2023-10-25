@@ -150,7 +150,7 @@ const ligtherBike = sortBy(bikes);
 function sortBy(array, prop) {
     let bikeSample = bikes[0];
     array.forEach((bike) => {
-        const {weight}= bike
+        const { weight } = bike
         if (bikeSample.weight > weight) {
             bikeSample = bike
         }
@@ -178,56 +178,66 @@ const teamSerieA = [
     {
         name: 'Milan',
         points: 0,
-        fouls: 0
+        fouls: 0,
+        image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Logo_of_AC_Milan.svg/653px-Logo_of_AC_Milan.svg.png'
     },
     {
         name: 'Cagliari',
         points: 0,
-        fouls: 0
+        fouls: 0,
+        image: 'https://upload.wikimedia.org/wikipedia/it/thumb/8/88/Cagliari_calcio.svg/1200px-Cagliari_calcio.svg.png'
     },
     {
         name: 'Torino',
         points: 0,
-        fouls: 0
+        fouls: 0,
+        image: 'https://upload.wikimedia.org/wikipedia/it/0/04/Torino_FC_logo.svg'
     },
     {
         name: 'Como',
         points: 0,
-        fouls: 0
+        fouls: 0,
+        image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Logo_Como_1907_2019.png/464px-Logo_Como_1907_2019.png'
     },
     {
         name: 'Sampdoria',
         points: 0,
-        fouls: 0
+        fouls: 0,
+        image: 'https://upload.wikimedia.org/wikipedia/en/thumb/d/d2/U.C._Sampdoria_logo.svg/1200px-U.C._Sampdoria_logo.svg.png'
     },
     {
         name: 'Lazio',
         points: 0,
-        fouls: 0
+        fouls: 0,
+        image: 'https://upload.wikimedia.org/wikipedia/en/thumb/c/ce/S.S._Lazio_badge.svg/1200px-S.S._Lazio_badge.svg.png'
     },
     {
         name: 'Roma',
         points: 0,
-        fouls: 0
+        fouls: 0,
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRv5Z-XNJx6dRHiS62fEGaORHCH25EMBQZx8YC2PEu&s'
     },
     {
         name: 'Atalanta',
         points: 0,
-        fouls: 0
+        fouls: 0,
+        image: 'https://upload.wikimedia.org/wikipedia/it/thumb/8/81/Logo_Atalanta_Bergamo.svg/1200px-Logo_Atalanta_Bergamo.svg.png'
     },
     {
         name: 'Palermo',
         points: 0,
-        fouls: 0
+        fouls: 0,
+        image: 'https://upload.wikimedia.org/wikipedia/it/thumb/6/66/Palermo_Football_Club_logo.svg/1200px-Palermo_Football_Club_logo.svg.png'
     },
     {
         name: 'Napoli',
         points: 0,
-        fouls: 0
+        fouls: 0,
+        image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/SSC_Napoli.svg/1200px-SSC_Napoli.svg.png'
     }
 
 ]
-console.log(teamSerieA);
+//console.log(teamSerieA);
 
 
 
@@ -240,19 +250,54 @@ const seasonResult = teamSerieA.map((team) => {
     const { name, fouls } = team;
     return `Team : ${name} , has received ${fouls} fouls`
 })
-console.log(seasonResult);
+//console.log(seasonResult);
 
 
-// // Team constructor
-// class Team {
-//     name;
-//     points;
-//     fouls;
-//     constructor(name, points, fouls) {
-//         this.name = name,
-//             this.points = 0,
-//             this.fouls = 0
-//     }
-// }
-// const milan = new Team('milan');
-// console.log(milan);
+// Cards constructor
+class Card {
+    title;
+    text;
+    image = 'https://clicktrans.it/bundles/app/images/picture-default.png';
+    container;
+    constructor(title, text, image, container) {
+        this.title = title,
+            this.text = text,
+            this.image = image,
+            this.container = container
+    }
+    printCardTeam() {
+        const divCol = document.createElement('div');
+        divCol.classList.add('col-12');
+        divCol.classList.add('col-sm-6');
+        divCol.classList.add('col-lg-4');
+        let template = `
+        <div class="card my-card">
+        <div class="my-img-container" id="">
+            <img src="${this.image}" class="card-img-top" alt="${this.image}">
+        </div>
+            
+            <div class="card-body">
+                <h5 class="card-title">${this.title} </h5>
+                <p class="card-text">${this.text}</p>
+            </div>
+        </div>
+        `;
+        divCol.innerHTML = template;
+        this.container.append(divCol);
+    }
+}
+
+const divCards = document.getElementById('show-cards');
+
+teamSerieA.forEach((element) => {
+    const { name, fouls, image } = element;
+    let msg = `Team : ${name} , has received ${fouls} fouls`
+    const card = new Card(name, msg, image, divCards);
+    
+    
+
+    card.printCardTeam();
+
+})
+
+
