@@ -2,7 +2,7 @@
 
 //Snack 1
 
-console.log('***********************************************************************************/n Snack 1')
+console.log('***********************************************************************************\n Snack 1')
 
 const tableVip = ['Brad Pitt', 'Johnny Depp', 'Lady Gaga', 'Cristiano Ronaldo', 'Georgina Rodriguez', 'Chiara Ferragni', 'Fedez', 'George Clooney', 'Amal Clooney', 'Maneskin'];
 
@@ -35,7 +35,7 @@ Id  Name                Grades
 120 Francesca da Polenta    84
 
 */
-console.log('***********************************************************************************/n Snack 2')
+console.log('***********************************************************************************\nSnack 2')
 
 const students = [
     {
@@ -97,37 +97,37 @@ console.log(studentGrades70id120);
 
 //Snack 3
 
-console.log('***********************************************************************************/n Snack 3')
+console.log('***********************************************************************************\nSnack 3')
 
 const bikes = [
-{ name: 'Atala10', weight: 22 },
+    { name: 'Atala10', weight: 22 },
 
- 
-{ name: 'Atala8', weight: 25 },
 
- 
-{ name: 'Atala1', weight: 14 },
+    { name: 'Atala8', weight: 25 },
 
- 
-{ name: 'Atala3', weight: 19 },
 
- 
-{ name: 'Atala11', weight: 18 },
+    { name: 'Atala1', weight: 14 },
 
- 
-{ name: 'Atala82', weight: 13 },
 
- 
-{ name: 'Atala31', weight: 11 },
+    { name: 'Atala3', weight: 19 },
 
- 
-{ name: 'Atala4', weight: 21 },
 
- 
-{ name: 'Atala47', weight: 13 },
+    { name: 'Atala11', weight: 18 },
 
- 
-{ name: 'Atala80', weight: 15 }
+
+    { name: 'Atala82', weight: 13 },
+
+
+    { name: 'Atala31', weight: 11 },
+
+
+    { name: 'Atala4', weight: 21 },
+
+
+    { name: 'Atala47', weight: 13 },
+
+
+    { name: 'Atala80', weight: 15 }
 ];
 // while (bikes.length < 10) {
 //     const bike = { name: '', weight: '' };
@@ -144,10 +144,10 @@ bikes.forEach((bike) => {
     bikeWeight.push(weight);
 })
 bikeWeight.sort((a, b) => a - b);
-const lighterBike = bikes.filter((bike,index)=>{
+const lighterBike = bikes.filter((bike, index) => {
     return bike.weight === bikeWeight[0];
-}) 
-console.log (`La bici più leggera è :${lighterBike[0].name}`);
+})
+console.log(`La bici più leggera è :${lighterBike[0].name}`);
 
 
 
@@ -156,3 +156,24 @@ console.log (`La bici più leggera è :${lighterBike[0].name}`);
 
 //console.log(bikeWeight.sort((a, b) => a - b));
 
+/******************************************************************************** */
+
+//Snack 4
+
+console.log('***********************************************************************************\n Snack 4')
+
+
+
+// Team constructor
+class Team {
+    name;
+    points;
+    faults;
+    constructor(name, points, faults) {
+        this.name = name,
+            this.points = 0,
+            this.faults = 0
+    }
+}
+const milan = new Team('milan');
+console.log(milan);
