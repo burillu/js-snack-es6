@@ -147,9 +147,9 @@ console.log(`La bici più leggera è :${lighterBike[0].name}`);*/
 
 const ligtherBike = sortBy(bikes);
 
-function sortBy(array){
+function sortBy(array, prop) {
     let bikeSample = bikes[0];
-    array.forEach((bike)=>{
+    array.forEach((bike) => {
         if (bikeSample.weight > bike.weight) {
             bikeSample = bike
         }
@@ -173,16 +173,76 @@ console.log('*******************************************************************
 
 
 
-// Team constructor
-class Team {
-    name;
-    points;
-    faults;
-    constructor(name, points, faults) {
-        this.name = name,
-            this.points = 0,
-            this.faults = 0
+const teamSerieA = [
+    {
+        name:'milan',
+        points:0,
+        faults:0
+    },
+    {
+        name:'cagliari',
+        points:0,
+        faults:0
+    },
+    {
+        name:'torino',
+        points:0,
+        faults:0
+    },
+    {
+        name:'como',
+        points:0,
+        faults:0
+    },
+    {
+        name:'sampdoria',
+        points:0,
+        faults:0
+    },
+    {
+        name:'lazio',
+        points:0,
+        faults:0
+    },
+    {
+        name:'roma',
+        points:0,
+        faults:0
+    },
+    {
+        name:'atalanta',
+        points:0,
+        faults:0
+    },
+    {
+        name:'palermo',
+        points:0,
+        faults:0
+    },
+    {
+        name:'napoli',
+        points:0,
+        faults:0
     }
-}
-const milan = new Team('milan');
-console.log(milan);
+
+]
+console.log(teamSerieA);
+
+
+
+
+
+
+// // Team constructor
+// class Team {
+//     name;
+//     points;
+//     faults;
+//     constructor(name, points, faults) {
+//         this.name = name,
+//             this.points = 0,
+//             this.faults = 0
+//     }
+// }
+// const milan = new Team('milan');
+// console.log(milan);
