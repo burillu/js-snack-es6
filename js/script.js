@@ -129,12 +129,8 @@ const bikes = [
 
     { name: 'Atala80', weight: 15 }
 ];
-// while (bikes.length < 10) {
-//     const bike = { name: '', weight: '' };
-//     bike.name = 'Atala' + getRndInteger(1, 8).toString();
-//     bike.weight = getRndInteger(10, 25);
-//     bikes.push(bike);
-// }
+
+/* PRIMA SOLUZIONE**************************************
 console.log(bikes)
 const bikeWeight = [];
 
@@ -147,7 +143,20 @@ bikeWeight.sort((a, b) => a - b);
 const lighterBike = bikes.filter((bike, index) => {
     return bike.weight === bikeWeight[0];
 })
-console.log(`La bici più leggera è :${lighterBike[0].name}`);
+console.log(`La bici più leggera è :${lighterBike[0].name}`);*/
+
+const ligtherBike = sortBy(bikes);
+
+function sortBy(array){
+    let bikeSample = bikes[0];
+    array.forEach((bike)=>{
+        if (bikeSample.weight > bike.weight) {
+            bikeSample = bike
+        }
+    })
+    return bikeSample
+}
+console.log(ligtherBike);
 
 
 
